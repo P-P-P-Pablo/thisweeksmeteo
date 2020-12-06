@@ -3,7 +3,9 @@
 		<h1>
 			{{ meteo.city ? meteo.city.name + ' ' + meteo.city.cp : 'loading' }}
 		</h1>
+    <h6>Survolez les pictogrammes pour le détail</h6>
 		<ul>
+      
 			<Day
 				v-bind:key="meteoday.day"
 				:meteoday="meteoday"
