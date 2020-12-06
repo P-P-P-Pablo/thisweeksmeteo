@@ -2,13 +2,13 @@
 
 ```
 npm install
-```
+
 
 npm run serve
 
 ```
 
-fait avec l'api !(Meteo-Concept)[https://api.meteo-concept.com/]
+fait avec l'api (Meteo-Concept)[https://api.meteo-concept.com/]
 
 axios pour requeter l'api
 dayjs pour gerer les dates
