@@ -1,18 +1,31 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="https://media.giphy.com/media/xT3i0SV1CunfwGTToI/giphy.gif" />
-    <Week />
+    <Week :meteo="meteoweek"/>
   </div>
 </template>
 
 <script>
 import Week from "./components/Week.vue";
+import axios from 'axios';
 
 export default {
   name: "App",
   components: {
     Week,
   },
+  data() {
+		return {
+			meteoweek: [],
+		};
+	},
+  beforeCreate() {
+		axios
+			.get(
+				`https://api.meteo-concept.com/api/forecast/daily?token=${process.env.VUE_APP_API_KEY}&insee=69266`
+			)
+			.then((response) => (this.meteoweek = response.data));
+	},
 };
 </script>
 
